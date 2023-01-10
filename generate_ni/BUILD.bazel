@@ -7,8 +7,8 @@ py_library(
 )
 
 py_binary(
-    name = "generate_ni",
-    srcs = ["generate_ni.py"],
+    name = "generate_ni_deps",
+    srcs = ["generate_ni_deps.py"],
     deps = ["@bzlmodrio-gentool//bazelrio_gentool", ":get_ni_dependencies"],
     visibility = ["//visibility:public"]
 )
