@@ -1,6 +1,6 @@
 
 import os
-from get_ni_dependencies import get_ni_dependencies
+from generate_ni.get_ni_dependencies import get_ni_dependencies
 
 from bazelrio_gentool.generate_group import generate_group
 from bazelrio_gentool.generate_module_project_files import generate_module_project_files
