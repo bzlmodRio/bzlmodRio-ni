@@ -1,0 +1,23 @@
+
+module(
+    name = "bzlmodrio-ni",
+    version = "2021.3.1",
+    compatibility_level = 2021,
+)
+
+bazel_dep(name = "bazel_skylib", version = "1.1.1")
+bazel_dep(name = "platforms", version = "0.0.4")
+bazel_dep(name = "rules_cc", version = "0.0.2")
+
+bazel_dep(name = "rules_bazelrio", version = "0.0.2")
+bazel_dep(name = "rules_roborio_toolchain", version = "0.0.1")
+
+
+setup_ni_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_ni_dependencies")
+use_repo(
+    setup_ni_dependencies,
+    "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena",
+)

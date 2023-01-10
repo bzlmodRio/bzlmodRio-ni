@@ -1,0 +1,11 @@
+cc_library(
+    name = "ni",
+    linkstatic = 1,
+    visibility = ["//visibility:public"],
+    deps = [
+        "@bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena//:shared_libs",
+        "@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena//:shared_libs",
+        "@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs",
+        "@bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena//:shared_libs",
+    ],
+)
