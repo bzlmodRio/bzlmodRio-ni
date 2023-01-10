@@ -1,0 +1,14 @@
+
+py_library(
+    name = "get_ni_dependencies",
+    srcs = ["get_ni_dependencies.py"],
+    deps = ["@bzlmodrio-gentool//bazelrio_gentool"],
+    visibility = ["//visibility:public"]
+)
+
+py_binary(
+    name = "generate_ni",
+    srcs = ["generate_ni.py"],
+    deps = ["@bzlmodrio-gentool//bazelrio_gentool", ":get_ni_dependencies"],
+    visibility = ["//visibility:public"]
+)

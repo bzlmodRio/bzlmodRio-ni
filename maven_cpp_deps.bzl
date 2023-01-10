@@ -1,6 +1,37 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_jar")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 
+filegroup_all = """filegroup(
+     name = "all",
+     srcs = glob(["**"]),
+     visibility = ["//visibility:public"],
+ )
+ """
+
+cc_library_headers = """cc_library(
+    name = "headers",
+    hdrs = glob(["**"]),
+    includes = ["."],
+    visibility = ["//visibility:public"],
+)
+"""
+
+cc_library_sources = """filegroup(
+     name = "sources",
+     srcs = glob(["**"]),
+     visibility = ["//visibility:public"],
+ )
+ """
+
+cc_library_static = """
+
+cc_library(
+    name = "static_libs",
+    srcs = glob(["**/*.lib", "**/*.a"]),
+    visibility = ["//visibility:public"],
+)
+"""
+
 cc_library_shared = """
 static_srcs = glob(["**/*.lib", "**/*.a"], exclude=["**/*jni.lib"])
 shared_srcs = glob(["**/*.dll", "**/*.so*", "**/*.dylib"], exclude=["**/*jni.dll", "**/*jni.so", "**/*.so.debug", "**/libopencv_java*.dylib"])
@@ -28,7 +59,7 @@ cc_library(
 )
 """
 
-def __setup_ni_dependencies(mctx):
+def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena",
@@ -59,7 +90,10 @@ def __setup_ni_dependencies(mctx):
     )
 
 
+def setup_legacy_bzlmodrio_ni_cpp_dependencies():
+    __setup_bzlmodrio_ni_cpp_dependencies(None)
 
-setup_ni_dependencies = module_extension(
-    __setup_ni_dependencies,
+
+setup_bzlmodrio_ni_cpp_dependencies = module_extension(
+    __setup_bzlmodrio_ni_cpp_dependencies,
 )
