@@ -30,6 +30,9 @@ local_repository(
     path = "../../bzlmodRio-rules_bazelrio",
 )
 
+
+
+
 # My repository!
 local_repository(
     name = "bzlmodrio-ni",
@@ -38,4 +41,3 @@ local_repository(
 
 load("@bzlmodrio-ni//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_ni_cpp_dependencies")
 setup_legacy_bzlmodrio_ni_cpp_dependencies()
-

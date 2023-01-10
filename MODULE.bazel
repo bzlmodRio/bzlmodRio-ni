@@ -9,29 +9,12 @@ module(
 # bazel_dep(name = "platforms", version = "0.0.4")
 # bazel_dep(name = "rules_cc", version = "0.0.2")
 # bazel_dep(name = "rules_java", version = "5.1.0")
-bazel_dep(name = "rules_jvm_external", version = "4.4.2")
 
 # bazel_dep(name = "rules_python", version = "0.12.0", dev_dependency=True)
 
 bazel_dep(name = "bzlmodrio-gentool", version = "")
 bazel_dep(name = "rules_bazelrio", version = "0.0.2")
 bazel_dep(name = "rules_roborio_toolchain", version = "0.0.1")
-
-
-maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
-maven.install(
-    artifacts = [
-    ],
-    repositories = [
-        "https://repo1.maven.org/maven2",
-        "https://frcmaven.wpi.edu/release",
-    ]
-)
-
-use_repo(
-    maven,
-    "maven",
-)
 
 
 setup_bzlmodrio_ni_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_ni_cpp_dependencies")
