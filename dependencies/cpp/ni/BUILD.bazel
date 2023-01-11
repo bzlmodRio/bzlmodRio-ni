@@ -2,11 +2,13 @@ cc_library(
     name = "ni",
     linkstatic = 1,
     visibility = ["//visibility:public"],
-    deps = [
-    ] + select({
-        "@bazel_tools//src/conditions:windows": ["@bazelrio_edu_wpi_first_ni-libraries_netcomm_windowsx86-64//:shared_libs"],
-        "@bazel_tools//src/conditions:linux_x86_64": ["@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxx86-64//:shared_libs"],
-        "@bazel_tools//src/conditions:darwin": ["@bazelrio_edu_wpi_first_ni-libraries_netcomm_osxx86-64//:shared_libs"],
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena//:shared_libs"],
+    deps = select({
+        "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
+            "@bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena//:shared_libs",
+            "@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena//:shared_libs",
+            "@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs",
+            "@bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena//:shared_libs",
+        ],
+        "//conditions:default": [],
     }),
 )

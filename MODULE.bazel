@@ -14,7 +14,7 @@ module(
 
 bazel_dep(name = "bzlmodrio-gentool", version = "")
 bazel_dep(name = "rules_bazelrio", version = "0.0.2")
-bazel_dep(name = "rules_roborio_toolchain", version = "0.0.1")
+bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.3")
 
 
 
