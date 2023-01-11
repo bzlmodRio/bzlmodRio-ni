@@ -16,7 +16,7 @@ def main():
 
     group = get_ni_dependencies()
 
-    rules_roborio_toolchain_dep = MandetoryDependencySettings.Setting(0, True)
+    rules_roborio_toolchain_dep = MandetoryDependencySettings.Setting("2023-7.3", False)
     rules_bazelrio_dep = MandetoryDependencySettings.Setting(0, True)
 
     mandetory_dependencies = MandetoryDependencySettings(
