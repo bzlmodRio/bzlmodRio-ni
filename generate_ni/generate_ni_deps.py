@@ -16,13 +16,8 @@ def main():
 
     group = get_ni_dependencies()
 
-    rules_roborio_toolchain_dep = MandetoryDependencySettings.Setting("2023-7.3", False)
-    rules_bazelrio_dep = MandetoryDependencySettings.Setting(0, True)
-
     mandetory_dependencies = MandetoryDependencySettings(
         bcr_branch = "main",
-        rules_roborio_toolchain=rules_roborio_toolchain_dep,
-        rules_bazelrio=rules_bazelrio_dep,
     )
 
     # clean_existing_version(REPO_DIR)
