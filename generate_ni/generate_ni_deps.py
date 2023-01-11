@@ -25,4 +25,7 @@ def main():
     generate_group(output_dir, group)
     
 if __name__ == "__main__":
+    """
+    bazel run @bzlmodrio-ni//generate_ni:generate_ni_deps
+    """
     main()

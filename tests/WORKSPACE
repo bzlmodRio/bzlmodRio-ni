@@ -34,9 +34,9 @@ install_deps()
 # Roborio Toolchain
 http_archive(
     name = "rules_roborio_toolchain",
-    sha256 = "TODO",
-    strip_prefix = "TODO",
-    url = "TODO",
+    sha256 = "dbbed356b480fd5e96bffbf074d4a3f1949236b64abb9c7e0d9db1edef0c0427",
+    strip_prefix = "rules_roborio_toolchain-2023-dev",
+    url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/836647310508c1c9a838adc12f0535ea6abdcff5.zip",
 )
 
 
@@ -47,7 +47,9 @@ load("@rules_roborio_toolchain//toolchains:load_toolchains.bzl", "load_toolchain
 load_toolchains()
 
 register_toolchains(
-    "@local_roborio//:cc-toolchain-roborio",
+    "@local_roborio//:macos",
+    "@local_roborio//:linux",
+    "@local_roborio//:windows",
 )
 
 # Bazelrio Rules
