@@ -1,7 +1,7 @@
 
 module(
     name = "bzlmodrio-ni",
-    version = "2020.9.2",
+    version = "2023.3.0",
     compatibility_level = 2023,
 )
 
