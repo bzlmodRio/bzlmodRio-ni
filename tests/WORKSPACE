@@ -15,9 +15,11 @@ http_archive(
 )
 
 # Project Generator
-local_repository(
+http_archive(
     name = "bzlmodrio-gentool",
-    path = "../../gentool",
+    #sha256 = "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
+    strip_prefix = "gentool-main",
+    url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/main.zip",
 )
 
 load("@rules_python//python:pip.bzl", "pip_parse")
