@@ -25,7 +25,7 @@ jobs:
         - { name: "windows - bzlmod cross",  os: windows-latest, command: "build", config: "--enable_bzlmod --config=roborio" }
         - { name: "ubuntu  - bzlmod cross",  os: ubuntu-latest,  command: "build", config: "--enable_bzlmod --config=roborio" }
         - { name: "macos   - bzlmod cross",  os: macos-latest,   command: "build", config: "--enable_bzlmod --config=roborio" }
-    name: "Build Tests - ${{ matrix.name }}"
+    name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
