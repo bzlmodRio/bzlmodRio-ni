@@ -17,9 +17,9 @@ http_archive(
 # Project Generator
 http_archive(
     name = "bzlmodrio-gentool",
-    #sha256 = "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
-    strip_prefix = "gentool-main",
-    url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/main.zip",
+    sha256 = "91dbeb541a6151eab3f4dfa37318b81e3f4fa964e45ebea48665cb2b3e471353",
+    strip_prefix = "gentool-dummy_version",
+    url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/dummy_version.zip",
 )
 
 load("@rules_python//python:pip.bzl", "pip_parse")
