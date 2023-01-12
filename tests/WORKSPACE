@@ -37,8 +37,8 @@ install_deps()
 # Roborio Toolchain
 http_archive(
     name = "rules_roborio_toolchain",
-    sha256 = "dbbed356b480fd5e96bffbf074d4a3f1949236b64abb9c7e0d9db1edef0c0427",
-    strip_prefix = "rules_roborio_toolchain-2023-dev",
+    sha256 = "6a92e62829905cdc8bdb398b5467476699dff503be3d0b49c122e9ed8c9df35f",
+    strip_prefix = "rules_roborio_toolchain-836647310508c1c9a838adc12f0535ea6abdcff5",
     url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/836647310508c1c9a838adc12f0535ea6abdcff5.zip",
 )
 
