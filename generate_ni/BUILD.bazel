@@ -14,3 +14,13 @@ py_binary(
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )
+
+py_binary(
+    name = "publish_ni_deps",
+    srcs = ["publish_ni_deps.py"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":get_ni_dependencies",
+        "@bzlmodrio-gentool//bazelrio_gentool",
+    ],
+)
