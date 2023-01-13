@@ -1,4 +1,4 @@
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_jar")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 
 filegroup_all = """filegroup(
@@ -89,10 +89,8 @@ def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
         build_file_content = cc_library_shared,
     )
 
-
 def setup_legacy_bzlmodrio_ni_cpp_dependencies():
     __setup_bzlmodrio_ni_cpp_dependencies(None)
-
 
 setup_bzlmodrio_ni_cpp_dependencies = module_extension(
     __setup_bzlmodrio_ni_cpp_dependencies,
