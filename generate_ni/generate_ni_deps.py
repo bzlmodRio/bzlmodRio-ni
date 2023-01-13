@@ -26,6 +26,6 @@ def main():
     
 if __name__ == "__main__":
     """
-    bazel run @bzlmodrio-ni//generate_ni:generate_ni_deps
+    bazel run @bzlmodrio-ni//generate_ni:generate_ni_deps --enable_bzlmod
     """
     main()
