@@ -2,8 +2,8 @@
 import os
 from generate_ni.get_ni_dependencies import get_ni_dependencies
 
-from bazelrio_gentool.generate_group import generate_group
-from bazelrio_gentool.generate_module_project_files import generate_module_project_files, MandetoryDependencySettings
+from bazelrio_gentool.generate_group import generate_private_raw_libraries
+from bazelrio_gentool.generate_module_project_files import generate_module_project_files, create_default_mandatory_settings
 from bazelrio_gentool.clean_existing_version import clean_existing_version
 from bazelrio_gentool.utils import TEMPLATE_BASE_DIR, render_template
 
@@ -16,13 +16,14 @@ def main():
 
     group = get_ni_dependencies()
 
-    mandetory_dependencies = MandetoryDependencySettings(
-        bcr_branch = "main",
-    )
+    mandatory_dependencies = create_default_mandatory_settings(
+        use_local_roborio=True,
+        use_local_bazelrio=True,
+        use_local_bzlmodrio_gentool=True)
 
-    # clean_existing_version(REPO_DIR)
-    generate_module_project_files(REPO_DIR, group, mandetory_dependencies)
-    generate_group(output_dir, group)
+    clean_existing_version(REPO_DIR, extra_dir_blacklist=["ni"])
+    generate_module_project_files(REPO_DIR, group, mandatory_dependencies)
+    generate_private_raw_libraries(output_dir, group)
     
 if __name__ == "__main__":
     """

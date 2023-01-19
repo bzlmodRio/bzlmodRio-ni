@@ -1,5 +1,11 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+# My repository!
+local_repository(
+    name = "bzlmodrio-ni",
+    path = "../",
+)
+
 # Google Test
 http_archive(
     name = "googletest",
@@ -8,66 +14,15 @@ http_archive(
     urls = ["https://github.com/google/googletest/archive/5ab508a01f9eb089207ee87fd547d290da39d015.zip"],
 )
 
-http_archive(
-    name = "rules_python",
-    sha256 = "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
-    strip_prefix = "rules_python-0.16.1",
-    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz",
-)
+load("@bzlmodrio-ni//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
 
-# Project Generator
-http_archive(
-    name = "bzlmodrio-gentool",
-    sha256 = "91dbeb541a6151eab3f4dfa37318b81e3f4fa964e45ebea48665cb2b3e471353",
-    strip_prefix = "gentool-dummy_version",
-    url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/dummy_version.zip",
-)
+download_dependencies()
 
-load("@rules_python//python:pip.bzl", "pip_parse")
+load("@bzlmodrio-ni//private/non_bzlmod_dependencies:setup_dependencies.bzl","setup_dependencies")
 
-pip_parse(
-    name = "pip",
-    requirements_lock = "@bzlmodrio-gentool//:requirements_lock.txt",
-)
+setup_dependencies()
 
-load("@pip//:requirements.bzl", "install_deps")
+
+load("@bzlmodrio-gentool-pip//:requirements.bzl", "install_deps")
 
 install_deps()
-
-# Roborio Toolchain
-http_archive(
-    name = "rules_roborio_toolchain",
-    sha256 = "6a92e62829905cdc8bdb398b5467476699dff503be3d0b49c122e9ed8c9df35f",
-    strip_prefix = "rules_roborio_toolchain-836647310508c1c9a838adc12f0535ea6abdcff5",
-    url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/836647310508c1c9a838adc12f0535ea6abdcff5.zip",
-)
-
-load("@rules_roborio_toolchain//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
-
-setup_legacy_setup_toolchains_dependencies()
-
-load("@rules_roborio_toolchain//toolchains:load_toolchains.bzl", "load_toolchains")
-
-load_toolchains()
-
-register_toolchains(
-    "@local_roborio//:macos",
-    "@local_roborio//:linux",
-    "@local_roborio//:windows",
-)
-
-# Bazelrio Rules
-local_repository(
-    name = "rules_bazelrio",
-    path = "../../bzlmodRio-rules_bazelrio",
-)
-
-# My repository!
-local_repository(
-    name = "bzlmodrio-ni",
-    path = "../",
-)
-
-load("@bzlmodrio-ni//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_ni_cpp_dependencies")
-
-setup_legacy_bzlmodrio_ni_cpp_dependencies()

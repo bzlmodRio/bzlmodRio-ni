@@ -4,10 +4,10 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = select({
         "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
-            "@bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena//:shared_libs",
-            "@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena//:shared_libs",
-            "@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs",
-            "@bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena//:shared_libs",
+            "@bzlmodrio-ni//private/cpp/chipobject:shared",
+            "@bzlmodrio-ni//private/cpp/netcomm:shared",
+            "@bzlmodrio-ni//private/cpp/runtime:shared",
+            "@bzlmodrio-ni//private/cpp/visa:shared",
         ],
         "//conditions:default": [],
     }),
