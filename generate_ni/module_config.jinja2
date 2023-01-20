@@ -9,7 +9,7 @@ module(
 bazel_dep(name = "rules_jvm_external", version = "4.4.2")
 {%- endif %}
 
-bazel_dep(name = "rules_bazelrio", version = "0.0.2")
+bazel_dep(name = "rules_bazelrio", version = "{{mandetory_dependencies.rules_bazelrio.version}}")
 bazel_dep(name = "rules_roborio_toolchain", version = "{{mandetory_dependencies.rules_roborio_toolchain.version}}")
 {% for name, module_dep in group.module_dependencies.items() %}
 bazel_dep(name = "{{name}}", version = "{{module_dep.container.version}}")
