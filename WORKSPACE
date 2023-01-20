@@ -4,7 +4,7 @@ load("@bzlmodrio_ni//private/non_bzlmod_dependencies:download_dependencies.bzl",
 
 download_dependencies()
 
-load("@bzlmodrio_ni//private/non_bzlmod_dependencies:setup_dependencies.bzl","setup_dependencies")
+load("@bzlmodrio_ni//private/non_bzlmod_dependencies:setup_dependencies.bzl", "setup_dependencies")
 
 setup_dependencies()
 
