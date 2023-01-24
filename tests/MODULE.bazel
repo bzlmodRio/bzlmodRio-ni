@@ -1,10 +1,13 @@
-bazel_dep(name = "bzlmodrio-ni", repo_name = "bzlmodrio-ni", version = "")
-
+bazel_dep(name = "bzlmodrio-ni", version = "", repo_name = "bzlmodrio-ni")
 local_path_override(
     module_name = "bzlmodrio-ni",
     path = "..",
 )
 
+local_path_override(
+    module_name = "bzlmodrio-gentool",
+    path = "../../gentool",
+)
 
 bazel_dep(name = "googletest", version = "1.11.0")
 bazel_dep(name = "rules_cc", version = "0.0.2")
@@ -14,7 +17,6 @@ bazel_dep(name = "rules_bazelrio", version = "0.0.7")
 bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
-
 maven.install(
     artifacts = [
         "org.junit.jupiter:junit-jupiter-api:5.8.2",
@@ -30,7 +32,6 @@ maven.install(
         "https://repo1.maven.org/maven2",
     ],
 )
-
 use_repo(
     maven,
     "maven",

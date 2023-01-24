@@ -1,6 +1,16 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def download_dependencies():
+    # JVM External
+    RULES_JVM_EXTERNAL_TAG = "4.2"
+    RULES_JVM_EXTERNAL_SHA = "cd1a77b7b02e8e008439ca76fd34f5b07aecb8c752961f9640dea15e9e5ba1ca"
+    http_archive(
+        name = "rules_jvm_external",
+        sha256 = RULES_JVM_EXTERNAL_SHA,
+        strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+        url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+    )
+
     # Python, for gentool
     http_archive(
         name = "rules_python",
@@ -10,19 +20,15 @@ def download_dependencies():
     )
 
     # Project Generator
-    http_archive(
+    native.local_repository(
         name = "bzlmodrio-gentool",
-        sha256 = "91dbeb541a6151eab3f4dfa37318b81e3f4fa964e45ebea48665cb2b3e471353",
-        strip_prefix = "gentool-dummy_version",
-        url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/dummy_version.zip",
+        path = "../../gentool",
     )
 
     # Bazelrio Rules
-    http_archive(
+    native.local_repository(
         name = "rules_bazelrio",
-        sha256 = "a8e997def42472dd2f31cd90b855c0aeab93aabe1b436cd48f4e1efdd760f01c",
-        strip_prefix = "bzlmodRio-rules_bazelrio-bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433",
-        url = "https://github.com/bzlmodRio/bzlmodRio-rules_bazelrio/archive/bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433.zip",
+        path = "../../bzlmodRio-rules_bazelrio",
     )
 
     # Roborio Toolchain
