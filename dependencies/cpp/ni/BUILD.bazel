@@ -1,5 +1,11 @@
-cc_library(
+alias(
     name = "ni",
+    actual = ":shared",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "shared",
     linkstatic = 1,
     visibility = ["//visibility:public"],
     deps = select({
@@ -11,4 +17,16 @@ cc_library(
         ],
         "//conditions:default": [],
     }),
+
+cc_library(
+    name = "static",
+    linkstatic = 1,
+    visibility = ["//visibility:public"],
+    deps = [
+        "@bzlmodrio-ni//private/cpp/netcomm:static",
+        "@bzlmodrio-ni//private/cpp/runtime:static",
+        "@bzlmodrio-ni//private/cpp/visa:static",
+        "@bzlmodrio-ni//private/cpp/chipobject:static",
+    ] + [
+    ],
 )
