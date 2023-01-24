@@ -10,8 +10,8 @@ bazel_dep(name = "googletest", version = "1.11.0")
 bazel_dep(name = "rules_cc", version = "0.0.2")
 bazel_dep(name = "rules_jvm_external", version = "4.4.2")
 bazel_dep(name = "bzlmodrio-gentool", version = "0.0.3")
-bazel_dep(name = "rules_bazelrio", version = "0.0.2")
-bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.4")
+bazel_dep(name = "rules_bazelrio", version = "0.0.7")
+bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 

@@ -20,17 +20,17 @@ def download_dependencies():
     # Bazelrio Rules
     http_archive(
         name = "rules_bazelrio",
-        sha256 = "470592cbc252abc8eed7520ce1d9c55007701b62f2e959836e53d66776200e82",
-        strip_prefix = "bzlmodRio-rules_bazelrio-bb90ff46dfe56fe1c227aac4277873d12d8abbe5",
-        url = "https://github.com/bzlmodRio/bzlmodRio-rules_bazelrio/archive/bb90ff46dfe56fe1c227aac4277873d12d8abbe5.zip",
+        sha256 = "a8e997def42472dd2f31cd90b855c0aeab93aabe1b436cd48f4e1efdd760f01c",
+        strip_prefix = "bzlmodRio-rules_bazelrio-bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433",
+        url = "https://github.com/bzlmodRio/bzlmodRio-rules_bazelrio/archive/bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433.zip",
     )
 
     # Roborio Toolchain
     http_archive(
         name = "rules_roborio_toolchain",
-        sha256 = "1470b8626dda33deb15bd2a220ce74bcd851880ce4aa560cf853bf6849ff3a01",
-        strip_prefix = "rules_roborio_toolchain-ba3f5a3fd391e6536b5fd5c13e0098b06892077a",
-        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/ba3f5a3fd391e6536b5fd5c13e0098b06892077a.zip",
+        sha256 = "c8a6fc0acac4a08aa884b59d13af9c3da010a4eed416ee10ccc05c73b9753deb",
+        strip_prefix = "rules_roborio_toolchain-8668e36043c7489a9669a9281f7024272b36d583",
+        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/8668e36043c7489a9669a9281f7024272b36d583.zip",
     )
 
     ########################
