@@ -2,14 +2,14 @@ cc_binary(
     name = "main",
     srcs = ["main.cpp"],
     # deps = ["@com_github_google_glog//:glog"],
-    deps = ["@bzlmodrio-ni//dependencies/cpp/ni"],
+    deps = ["@bzlmodrio-ni//libraries/cpp/ni"],
 )
 
 cc_test(
     name = "test",
     srcs = ["test.cpp"],
     deps = [
-        "@bzlmodrio-ni//dependencies/cpp/ni",
+        "@bzlmodrio-ni//libraries/cpp/ni",
         "@googletest//:gtest_main",
     ],
 )
