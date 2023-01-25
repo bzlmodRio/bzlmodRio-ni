@@ -6,8 +6,8 @@ module(
 
 bazel_dep(name = "platforms", version = "0.0.4")
 bazel_dep(name = "rules_java", version = "5.1.0")
-bazel_dep(name = "bzlmodrio-gentool", version = "0.0.3")
-bazel_dep(name = "rules_bazelrio", version = "0.0.7")
+bazel_dep(name = "bzlmodrio-gentool", version = "1.0.0")
+bazel_dep(name = "rules_bazelrio", version = "0.0.8")
 bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
 
 setup_bzlmodrio_ni_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_ni_cpp_dependencies")
