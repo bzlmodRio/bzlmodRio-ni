@@ -67,13 +67,16 @@ def get_ni_dependencies():
     )
 
     group.add_cc_meta_dependency(
-        "ni", 
-        deps=[], 
-        platform_deps={ 
+        "ni",
+        deps=[],
+        platform_deps={
             "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
-                "chipobject", "netcomm", "runtime", "visa"
+                "chipobject",
+                "netcomm",
+                "runtime",
+                "visa",
             ],
-            "//conditions:default": []
+            "//conditions:default": [],
         },
     )
 

@@ -23,7 +23,7 @@ def main():
         use_local_bzlmodrio_gentool=False,
     )
 
-    clean_existing_version(REPO_DIR, )
+    clean_existing_version(REPO_DIR)
     generate_module_project_files(REPO_DIR, group, mandatory_dependencies)
     generate_meta_deps(output_dir, group, force_tests=True)
 
