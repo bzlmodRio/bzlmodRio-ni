@@ -20,7 +20,7 @@ def main():
     mandatory_dependencies = create_default_mandatory_settings(
         use_local_roborio=False,
         use_local_bazelrio=False,
-        use_local_bzlmodrio_gentool=True,
+        use_local_bzlmodrio_gentool=False,
     )
 
     clean_existing_version(REPO_DIR, )
