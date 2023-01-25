@@ -10,7 +10,9 @@ def main():
     group = get_ni_dependencies()
 
     os.chdir(SCRIPT_DIR)
-    generate_json(registry_location, group, module_json_template=None, module_template=None)
+    generate_json(
+        registry_location, group, module_json_template=None, module_template=None
+    )
 
 
 if __name__ == "__main__":

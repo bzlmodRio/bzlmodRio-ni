@@ -1,17 +1,17 @@
 cc_binary(
     name = "main",
     srcs = ["main.cpp"],
+    tags = ["no-sandbox"],
     # deps = ["@com_github_google_glog//:glog"],
     deps = ["@bzlmodrio-ni//libraries/cpp/ni"],
-    tags = ["no-sandbox"],
 )
 
 cc_test(
     name = "test",
     srcs = ["test.cpp"],
+    tags = ["no-sandbox"],
     deps = [
         "@bzlmodrio-ni//libraries/cpp/ni",
         "@googletest//:gtest_main",
     ],
-    tags = ["no-sandbox"],
 )
