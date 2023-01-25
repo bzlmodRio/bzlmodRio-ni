@@ -1,5 +1,5 @@
 import os
-from generate_ni.get_ni_dependencies import get_ni_dependencies
+from get_ni_dependencies import get_ni_dependencies
 
 from bazelrio_gentool.generate_group import generate_meta_deps
 from bazelrio_gentool.generate_module_project_files import (

@@ -3,6 +3,7 @@ cc_binary(
     srcs = ["main.cpp"],
     # deps = ["@com_github_google_glog//:glog"],
     deps = ["@bzlmodrio-ni//libraries/cpp/ni"],
+    tags = ["no-sandbox"],
 )
 
 cc_test(
@@ -12,4 +13,5 @@ cc_test(
         "@bzlmodrio-ni//libraries/cpp/ni",
         "@googletest//:gtest_main",
     ],
+    tags = ["no-sandbox"],
 )

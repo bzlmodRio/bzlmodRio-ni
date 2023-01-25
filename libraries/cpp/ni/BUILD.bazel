@@ -8,7 +8,10 @@ cc_library(
     name = "shared",
     linkstatic = 1,
     visibility = ["//visibility:public"],
-    deps = select({
+    deps = 
+    
+    # Binaries
+    select({
         "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
             "//private/cpp/chipobject:shared",
             "//private/cpp/netcomm:shared",
