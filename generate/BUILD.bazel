@@ -6,8 +6,8 @@ py_library(
 )
 
 py_binary(
-    name = "generate_ni_deps",
-    srcs = ["generate_ni_deps.py"],
+    name = "generate",
+    srcs = ["generate.py"],
     visibility = ["//visibility:public"],
     deps = [
         ":get_ni_dependencies",
@@ -16,8 +16,8 @@ py_binary(
 )
 
 py_binary(
-    name = "publish_ni_deps",
-    srcs = ["publish_ni_deps.py"],
+    name = "publish",
+    srcs = ["publish.py"],
     visibility = ["//visibility:public"],
     deps = [
         ":get_ni_dependencies",
