@@ -1,0 +1,19 @@
+module(
+    name = "bzlmodrio-ni",
+    version = "2022.4.0",
+    compatibility_level = 2022,
+)
+
+bazel_dep(name = "platforms", version = "0.0.4")
+bazel_dep(name = "rules_java", version = "5.1.0")
+bazel_dep(name = "rules_bazelrio", version = "0.0.9")
+bazel_dep(name = "rules_roborio_toolchain", version = "2022-1")
+
+setup_bzlmodrio_ni_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_ni_cpp_dependencies")
+use_repo(
+    setup_bzlmodrio_ni_cpp_dependencies,
+    "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena",
+    "bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena",
+)

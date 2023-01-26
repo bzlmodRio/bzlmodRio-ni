@@ -1,0 +1,23 @@
+alias(
+    name = "ni",
+    actual = ":shared",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "shared",
+    linkstatic = 1,
+    visibility = ["//visibility:public"],
+    deps =
+        # Binaries
+        select({
+            "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
+                "//private/cpp/chipobject:shared",
+                "//private/cpp/netcomm:shared",
+                "//private/cpp/runtime:shared",
+                "//private/cpp/visa:shared",
+            ],
+            "//conditions:default": [
+            ],
+        }),
+)
