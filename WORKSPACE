@@ -9,3 +9,15 @@ load("@bzlmodrio-ni//private/non_bzlmod_dependencies:setup_dependencies.bzl", "s
 setup_dependencies()
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_artifacts, maven_repositories = [], [
+    "https://repo1.maven.org/maven2",
+    "https://frcmaven.wpi.edu/release",
+]
+
+maven_install(
+    name = "maven",
+    artifacts = maven_artifacts,
+    repositories = maven_repositories,
+    # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
+)

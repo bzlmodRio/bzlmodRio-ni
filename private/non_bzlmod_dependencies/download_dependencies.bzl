@@ -22,9 +22,9 @@ def download_dependencies():
     # Roborio Toolchain
     http_archive(
         name = "rules_roborio_toolchain",
-        sha256 = "c83f40ec9bafba45c726062e3c7982f0301fbede9aa46ac25a9900642c13ca66",
-        strip_prefix = "rules_roborio_toolchain-8668e36043c7489a9669a9281f7024272b36d583",
-        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/8668e36043c7489a9669a9281f7024272b36d583.tar.gz",
+        sha256 = "27d38c924303eaf27bbcbe1dd439638b8dae90ee09f56bcebf787a42f6f9001a",
+        strip_prefix = "rules_roborio_toolchain-2c112065b211b8d9f4449ab518f89a9678041e3f",
+        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/2c112065b211b8d9f4449ab518f89a9678041e3f.tar.gz",
     )
 
     ########################
