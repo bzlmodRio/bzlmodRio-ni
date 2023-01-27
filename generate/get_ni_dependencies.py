@@ -10,8 +10,8 @@ def _default_all_platforms():
 
 def get_ni_dependencies():
 
-    year = "2022"
-    version = "2022.4.0"
+    year = "2023"
+    version = "2023.3.0"
 
     group_id = f"edu.wpi.first.ni-libraries"
 
