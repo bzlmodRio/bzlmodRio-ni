@@ -11,7 +11,7 @@ cc_library(
     deps =
         # Binaries
         select({
-            "@rules_roborio_toolchain//constraints/is_roborio:roborio": [
+            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
                 "//private/cpp/chipobject:shared",
                 "//private/cpp/netcomm:shared",
                 "//private/cpp/runtime:shared",
