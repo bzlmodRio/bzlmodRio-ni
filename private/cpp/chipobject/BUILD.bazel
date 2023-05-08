@@ -2,7 +2,7 @@ cc_library(
     name = "shared",
     linkstatic = 1,
     visibility = ["@bzlmodrio-ni//:__subpackages__"],
-    deps = select({
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena//:shared_libs"],
+    deps = ["@bazelrio_edu_wpi_first_ni-libraries_chipobject_headers//:headers"] + select({
+        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena//:shared_libs"],
     }),
 )

@@ -3,6 +3,6 @@ cc_library(
     linkstatic = 1,
     visibility = ["@bzlmodrio-ni//:__subpackages__"],
     deps = select({
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs"],
+        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs"],
     }),
 )
