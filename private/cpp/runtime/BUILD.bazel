@@ -2,7 +2,10 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
     name = "shared_interface",
+    srcs = select({
+    }),
     linkstatic = True,
+    tags = ["manual"],
     target_compatible_with = select({
         "@bazel_tools//src/conditions:darwin": ["@platforms//:incompatible"],
         "@bazel_tools//src/conditions:linux_x86_64": ["@platforms//:incompatible"],
@@ -13,16 +16,13 @@ cc_library(
         "//conditions:default": [],
     }),
     visibility = ["@bzlmodrio-ni//:__subpackages__"],
-    
-    srcs = select({
-,
-    }),
-    tags = ["manual"],
 )
 
 cc_library(
     name = "shared",
-    alwayslink = 1,
+    srcs = select({
+        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs"],
+    }),
     target_compatible_with = select({
         "@bazel_tools//src/conditions:darwin": ["@platforms//:incompatible"],
         "@bazel_tools//src/conditions:linux_x86_64": ["@platforms//:incompatible"],
@@ -37,8 +37,5 @@ cc_library(
         "@rules_bazelrio//conditions:windows": [":shared_interface"],
         "//conditions:default": [],
     }),
-    srcs = select({
-        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared_libs"],
-    }),
+    alwayslink = 1,
 )
-
