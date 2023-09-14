@@ -80,50 +80,50 @@ def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_chipobject_headers",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2023.3.0/chipobject-2023.3.0-headers.zip",
-        sha256 = "9c89df1bb3ec5f1f88957cc50d6b6f7dde7a2f8a81725763b04a7322a1690b0c",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2024.1.0/chipobject-2024.1.0-headers.zip",
+        sha256 = "cb29bd6882bbfe56608a70bc633edf5bedf13f0153df531e93c7d0fce152a052",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2023.3.0/chipobject-2023.3.0-linuxathena.zip",
-        sha256 = "e0279abec3de35fdb4d3d9a2a6d78f5e33d0c7555f65f101396b6b56a2c59e48",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2024.1.0/chipobject-2024.1.0-linuxathena.zip",
+        sha256 = "36095a67f077837ae6e518b2987e3ecf6fed931a372acc3268e067b4f4f976bf",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_visa_headers",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2023.3.0/visa-2023.3.0-headers.zip",
-        sha256 = "5ed45a7277d01d737aa22de6075f6906bba36fcdb2948e125b60366d558f9c1d",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2024.1.0/visa-2024.1.0-headers.zip",
+        sha256 = "f15a4141887e49fc5533ba5da8a02304ffb3b623c57e1eb4feaca3b7e7411f86",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2023.3.0/visa-2023.3.0-linuxathena.zip",
-        sha256 = "8a2df8426264ecf72ce2eee67631a9ec8b29344699db2aba8b67dd7ddcdc2e27",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2024.1.0/visa-2024.1.0-linuxathena.zip",
+        sha256 = "1cd5da173951d54e4995759dcf2fb985ea926e93634a9a9154192d58310be51a",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/runtime/2023.3.0/runtime-2023.3.0-linuxathena.zip",
-        sha256 = "c74921b25fb0ee9c6def4872f25b177febbc11cc0dc8605b32af4248eecc2142",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/runtime/2024.1.0/runtime-2024.1.0-linuxathena.zip",
+        sha256 = "4463e3bca0c21fc68beec59d34eb29909a37ba5daa451a39800a4209940c20c5",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_netcomm_headers",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2023.3.0/netcomm-2023.3.0-headers.zip",
-        sha256 = "1d3b61d3ff0d8a1aec9b535c635e2e6aeb2ce6c5e9adf4fad7ebbe63187c6802",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2024.1.0/netcomm-2024.1.0-headers.zip",
+        sha256 = "aa3960c213042a09cdd2a273bc2d14c337ae81e1590e4b9cdcab3316de5716eb",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena",
-        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2023.3.0/netcomm-2023.3.0-linuxathena.zip",
-        sha256 = "22fc5dc83740b5bb4de4268a35df331a8b58c01fc204ac95220484f22fc1a71d",
+        url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2024.1.0/netcomm-2024.1.0-linuxathena.zip",
+        sha256 = "0e3d271af9df48b5a96dff6cfdfec1760c18b43ec96e36290653f61c84b7797f",
         build_file_content = cc_library_shared,
     )
 
