@@ -6,8 +6,8 @@ def _default_all_platforms():
 
 
 def get_ni_dependencies():
-    year = "2023"
-    version = "2023.3.0"
+    year = "2024"
+    version = "2024.1.0"
     patch = ""
 
     group_id = f"edu.wpi.first.ni-libraries"
