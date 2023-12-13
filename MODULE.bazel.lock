@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "f24f6f7914981698fc929e4c6ba102f9d456b8ad5c5c1c0eb8d5ece8bf670196",
+  "moduleFileHash": "3dd945146d4a1951c8bc96a7915c68d66ab82a4b11b88e6793858ccdb86a8a55",
   "flags": {
     "cmdRegistries": [
       "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/"
@@ -18,7 +18,7 @@
   "moduleDepGraph": {
     "<root>": {
       "name": "bzlmodrio-ni",
-      "version": "2024.2.0",
+      "version": "2024.2.1",
       "key": "<root>",
       "repoName": "bzlmodrio-ni",
       "executionPlatformsToRegister": [],
