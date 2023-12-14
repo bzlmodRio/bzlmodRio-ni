@@ -14,7 +14,7 @@
   },
   "localOverrideHashes": {
     "bazel_tools": "0cc38516259ab87144b82461dd874e139f093d8e356667c3a3c5a52441ac448f",
-    "bzlmodrio-ni": "f24f6f7914981698fc929e4c6ba102f9d456b8ad5c5c1c0eb8d5ece8bf670196"
+    "bzlmodrio-ni": "3dd945146d4a1951c8bc96a7915c68d66ab82a4b11b88e6793858ccdb86a8a55"
   },
   "moduleDepGraph": {
     "<root>": {
@@ -87,7 +87,7 @@
     },
     "bzlmodrio-ni@_": {
       "name": "bzlmodrio-ni",
-      "version": "2024.2.0",
+      "version": "2024.2.1",
       "key": "bzlmodrio-ni@_",
       "repoName": "bzlmodrio-ni",
       "executionPlatformsToRegister": [],
