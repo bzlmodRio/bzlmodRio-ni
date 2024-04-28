@@ -1,3 +1,4 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
 
 JNI_PATTERN=[
     "**/*jni.dll",
@@ -24,19 +25,8 @@ shared_srcs = glob([
 shared_jni_srcs = glob(JNI_PATTERN, exclude=["**/*.so.debug"])
 
 filegroup(
-    name = "static_libs",
-    srcs = static_srcs,
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "shared_libs",
+    name = "shared",
     srcs = shared_srcs,
-    visibility = ["//visibility:public"],
+    visibility = ["@bzlmodrio-ni//:__subpackages__"],
 )
 
-filegroup(
-    name = "shared_jni_libs",
-    srcs = shared_jni_srcs,
-    visibility = ["//visibility:public"],
-)
