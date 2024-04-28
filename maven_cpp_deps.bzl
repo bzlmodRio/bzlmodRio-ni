@@ -1,13 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 
-filegroup_all = """filegroup(
-     name = "all",
-     srcs = glob(["**"]),
-     visibility = ["//visibility:public"],
- )
- """
-
 cc_library_headers = """cc_library(
     name = "headers",
     hdrs = glob(["**"]),
@@ -23,59 +16,6 @@ cc_library_sources = """filegroup(
  )
  """
 
-cc_library_static = """
-
-cc_library(
-    name = "static_libs",
-    srcs = glob(["**/*.lib", "**/*.a"]),
-    visibility = ["//visibility:public"],
-)
-"""
-
-cc_library_shared = """
-JNI_PATTERN=[
-    "**/*jni.dll",
-    "**/*jni.so*",
-    "**/*jni.dylib",
-    "**/*_java*.dll",
-    "**/lib*_java*.dylib",
-    "**/lib*_java*.so",
-]
-
-static_srcs = glob([
-        "**/*.lib",
-        "**/*.a"
-    ],
-    exclude=["**/*jni.lib"]
-)
-shared_srcs = glob([
-        "**/*.dll",
-        "**/*.so*",
-        "**/*.dylib",
-    ],
-    exclude=JNI_PATTERN + ["**/*.so.debug"]
-)
-shared_jni_srcs = glob(JNI_PATTERN, exclude=["**/*.so.debug"])
-
-filegroup(
-    name = "static_libs",
-    srcs = static_srcs,
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "shared_libs",
-    srcs = shared_srcs,
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "shared_jni_libs",
-    srcs = shared_jni_srcs,
-    visibility = ["//visibility:public"],
-)
-"""
-
 def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
     maybe(
         http_archive,
@@ -89,7 +29,7 @@ def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
         "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena",
         url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2024.2.1/chipobject-2024.2.1-linuxathena.zip",
         sha256 = "c42aee14154143489825022c76aaeeeefe46840c89ad48c757f7c70f8a46cf7f",
-        build_file_content = cc_library_shared,
+        build_file = "@bzlmodrio-ni//private/cpp/chipobject:shared.BUILD.bazel",
     )
     maybe(
         http_archive,
@@ -103,14 +43,14 @@ def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
         "bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena",
         url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2024.2.1/visa-2024.2.1-linuxathena.zip",
         sha256 = "162511fd08957eb9a35c2b97ec8584fc5b43c6b9a8deb049de88376690a495fe",
-        build_file_content = cc_library_shared,
+        build_file = "@bzlmodrio-ni//private/cpp/visa:shared.BUILD.bazel",
     )
     maybe(
         http_archive,
         "bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena",
         url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/runtime/2024.2.1/runtime-2024.2.1-linuxathena.zip",
         sha256 = "5ad951daea54da1193ebd4416a8077ee3de9abd8c8974cc7275238c1221687b2",
-        build_file_content = cc_library_shared,
+        build_file = "@bzlmodrio-ni//private/cpp/runtime:shared.BUILD.bazel",
     )
     maybe(
         http_archive,
@@ -124,7 +64,7 @@ def __setup_bzlmodrio_ni_cpp_dependencies(mctx):
         "bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena",
         url = "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2024.2.1/netcomm-2024.2.1-linuxathena.zip",
         sha256 = "8b1ba57c0fde3b1b3216a16bdf31b9440f3b7782637384cdca34e217e0eb4bf9",
-        build_file_content = cc_library_shared,
+        build_file = "@bzlmodrio-ni//private/cpp/netcomm:shared.BUILD.bazel",
     )
 
 def setup_legacy_bzlmodrio_ni_cpp_dependencies():
