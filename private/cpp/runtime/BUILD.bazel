@@ -4,6 +4,7 @@ filegroup(
     name = "shared_raw",
     srcs = select({
         "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena//:shared"],
+        "//conditions:default": [],
     }),
     visibility = ["@bzlmodrio-ni//:__subpackages__"],
 )
