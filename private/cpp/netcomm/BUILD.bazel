@@ -1,10 +1,23 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
-cc_library(
-    name = "shared",
+alias(
+    name = "header_files",
+    actual = "@bazelrio_edu_wpi_first_ni-libraries_netcomm_headers//:header_files",
+    visibility = ["@bzlmodrio-ni//:__subpackages__"],
+)
+
+filegroup(
+    name = "shared_raw",
     srcs = select({
         "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena//:shared"],
+        "//conditions:default": [],
     }),
+    visibility = ["@bzlmodrio-ni//:__subpackages__"],
+)
+
+cc_library(
+    name = "shared",
+    srcs = [":shared_raw"],
     target_compatible_with = select({
         "@bazel_tools//src/conditions:darwin": ["@platforms//:incompatible"],
         "@bazel_tools//src/conditions:linux_x86_64": ["@platforms//:incompatible"],
